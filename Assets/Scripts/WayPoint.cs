@@ -39,7 +39,7 @@ public class WayPoint : MonoBehaviour
             
             // Color changes after collision
             Color fadeColor = GetComponent<SpriteRenderer>().color;
-            fadeColor.a = health * 0.008f;
+            fadeColor.a = health * 0.01f;
             GetComponent<SpriteRenderer>().color = fadeColor;
             
             if (health <= 0) {

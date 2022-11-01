@@ -99,8 +99,8 @@ public class Hero : MonoBehaviour
     private IEnumerator shootEggs() {
         spawning = false; // stop till waiting 2 seconds after shooting
         GameObject spawnedEgg = Instantiate(eggProjectile);
-        spawnedEgg.transform.position = transform.position;
-        spawnedEgg.transform.up = transform.up;
+        spawnedEgg.transform.position = this.transform.position;
+        spawnedEgg.transform.up = this.transform.up;
         
         spawnedEgg.GetComponent<Egg>().decreaseEggs = this;
         numOfEggs++;

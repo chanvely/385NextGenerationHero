@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {   
         // to move foward enemies 
-        speed += Input.GetAxis("Vertical");
+        // speed += Input.GetAxis("Vertical");
         transform.position += transform.up * (speed * Time.smoothDeltaTime);
         Vector3 curPoisition = transform.position;
 
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(Vector3.forward, relativePosition);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotateSpeed * Time.deltaTime);
         
-        if (relativePosition.magnitude < 1) {
+        if (relativePosition.magnitude < 20) {
             findNextWaypoint();
         }
 
@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
         // rotate sequentially
         else {
             if (index < manager.letters.Count - 1) {
-                index++;
+                index = index + 1;
             }
             else {
                 index = 0;
